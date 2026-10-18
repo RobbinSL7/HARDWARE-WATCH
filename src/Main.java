@@ -1,18 +1,19 @@
 import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
+
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
 
-
-        System.out.printf("Hello and welcome!");
-
+        List<HardwareAsset> fleet = new ArrayList<>();
 
 
-        for (int i = 1; i <= 5; i++) {
 
-            System.out.println("i = " + i);
-        }
+
+
+
     }
 }
