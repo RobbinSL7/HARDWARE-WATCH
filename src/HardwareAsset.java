@@ -4,6 +4,8 @@ public class HardwareAsset {
  String category;
  String purchaseCost;
 
+ public DeviceState deviceState;
+
 
 
 
