@@ -11,41 +11,53 @@ public class Main {
         List<HardwareAsset> fleet = new ArrayList<>(); // Master Ledger Setup
 
 
-            HardwareAsset item = new HardwareAsset();  // Outer Container Setup
-            item.deviceState = new DeviceState();    // Inner Container Setup
+            System.out.print("Welcome To Hardware-Watch");
 
-            // Hardware Info Setup Test #1
-            item.assetTag = "LAP-01";
-            item.category = "CIL";
-            item.purchaseCost = "$100.00";
-                                                                       // Item Test #1
-            // State Info Setup Test #1
-            item.deviceState.deploymentStatus = "Active";
-            item.deviceState.assignedUser = "John Hammond";
+            while (true) {
+                System.out.print("Enter Asset Tag (Or Exit to finish) :");
+                String tagInput = scnr.nextLine().trim();
 
-             fleet.add(item);
+                // Escape Hatch
+                if(tagInput.equalsIgnoreCase("Exit")) {
+                    System.out.print("Exiting Menu");
+                    break;
+                }
 
-
-            // Hardware Info Setup Test #2
-            item.assetTag = "PHO-01";
-            item.category = "CIP";
-            item.purchaseCost = "$90.00";
-                                                                // Item Test #2
-            // State Info Setup Test #2
-            item.deviceState.deploymentStatus = "Active";
-            item.deviceState.assignedUser = "John Hammond";
-
-            fleet.add(item);
-
-         int totalAssets = fleet.size();
-
-        System.out.println(totalAssets);
+                // Intake Mode
+                HardwareAsset item = new HardwareAsset();  // Outer Container Setup
+                item.deviceState = new DeviceState();    // Inner Container Setup
 
 
+                item.assetTag = tagInput;
+
+                System.out.print("Enter The Asset Category:");
+                 item.category = scnr.nextLine().trim();
+
+                System.out.print("Enter the Asset Purchase Cost: ");
+                 item.purchaseCost = scnr.nextLine().trim();
+
+                System.out.print("Enter The Asset Status: ");
+                item.deviceState.deploymentStatus = scnr.nextLine().trim();
+
+                System.out.print("Enter The Assigned User: ");
+                item.deviceState.assignedUser = scnr.nextLine().trim();
+
+                fleet.add(item);
+                System.out.println("Asset Successfully Logged");
 
 
+                System.out.print("Would you like to add another? (Y/N)");
+                String choice = scnr.nextLine().trim();
+
+                if(choice.equalsIgnoreCase("N")) {
+                    System.out.println("Exiting System,Thank You For Using Hardware-Watch!");
 
 
+                    break;
+                }
+
+
+            }
 
 
 
