@@ -1,7 +1,7 @@
 public class DeviceState {
 
-    String deploymentStatus;
-    String assignedUser;
+    public String deploymentStatus;
+    public String assignedUser;
 
 
 

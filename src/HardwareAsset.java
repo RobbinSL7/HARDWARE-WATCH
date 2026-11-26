@@ -1,8 +1,8 @@
 public class HardwareAsset {
 
- String assetTag;
- String category;
- String purchaseCost;
+ public String assetTag;
+ public String category;
+ public double purchaseCost;
 
  public DeviceState deviceState;
 

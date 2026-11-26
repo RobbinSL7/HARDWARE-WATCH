@@ -11,13 +11,13 @@ public class Main {
         List<HardwareAsset> fleet = new ArrayList<>(); // Master Ledger Setup
 
 
-            System.out.print("Welcome To Hardware-Watch");
+            System.out.println("Welcome To Hardware-Watch");
 
             while (true) {
                 System.out.print("Enter Asset Tag (Or Exit to finish) :");
                 String tagInput = scnr.nextLine().trim();
 
-                // Escape Hatch
+                 // Escape Hatch
                 if(tagInput.equalsIgnoreCase("Exit")) {
                     System.out.print("Exiting Menu");
                     break;
@@ -34,7 +34,7 @@ public class Main {
                  item.category = scnr.nextLine().trim();
 
                 System.out.print("Enter the Asset Purchase Cost: ");
-                 item.purchaseCost = scnr.nextLine().trim();
+                 item.purchaseCost = Double.parseDouble(scnr.nextLine().trim());
 
                 System.out.print("Enter The Asset Status: ");
                 item.deviceState.deploymentStatus = scnr.nextLine().trim();
